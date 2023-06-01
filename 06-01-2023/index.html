@@ -1,0 +1,28 @@
+<html>
+
+<script>
+  let env='dev';
+  let finalamount;
+  let amount = 100;
+
+  if(env === 'dev')
+  {
+   finalamount = amount+(amount*0.1);
+  }
+  else if(env === 'test')
+  {
+   finalamount = amount+(amount*0.2);
+  }
+  else if(env === 'stage')
+  {
+   finalamount = amount+(amount*0.3);
+  }
+  else
+  {
+    finalamount = amount+(amount*0.4);
+  }
+
+  console.log(finalamount);
+  </script>
+
+</html>
