@@ -1,0 +1,84 @@
+
+<html>
+<head>
+  <title> Form</title>
+
+</head>
+<body>
+  <div>
+    <h1>Information</h1>
+    
+      <div>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" >
+      </div>
+      <div>
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" >
+      </div>
+      <div>
+        <label>
+            Gender:
+          </label>  
+          <input type="radio" id="gender" name="gender" value="male"/> Male
+          
+          <input type="radio" id="gender" name="gender" value="female"/> Female 
+        
+          
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div>
+        <label for="phnno">Phone Number:</label>
+        <input type="tel" id="phnno" required>
+      </div>
+      <div>
+        <label for="hobbies">Hobbies:</label>
+        <div >
+          <label><input type="checkbox" name="hobbies" value="cricket"> Cricket</label>
+          <label><input type="checkbox" name="hobbies" value="netflix"> netflix</label>
+          <label><input type="checkbox" name="hobbies" value="cooking"> Cooking</label>
+        </div>
+      </div>
+      <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+      </div>
+      <div>
+        <button onclick="Form()">Submit</button>
+      </div>
+    
+    <div id="display"></div>
+  </div>
+
+  <script>
+    function Form() {
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var gender = document.getElementById("gender").value;
+      var email = document.getElementById("email").value;
+      var phnno = document.getElementById("phnno").value;
+      var hobbies = document.getElementsByName("hobbies");
+      var hobby = [];
+      for (var i = 0; i < hobbies.length; i++) {
+        if (hobbies[i].checked) {
+          hobby.push(hobbies[i].value);
+        }
+      }
+      var dob = document.getElementById("dob").value;
+
+      var result = document.getElementById("dispay");
+      display.innerHTML = "<h2>Information:</h2>" +
+        "<p>First Name: " + firstname + "</p>" +
+        "<p>Last Name: " + lastname + "</p>" +
+        "<p><strong>Gender: " + gender + "</p>" +
+        "<p><strong>Email: " + email + "</p>" +
+        "<p><strong>Phone Number:" + phnno + "</p>" +
+        "<p><strong>Hobbies: " + hobby.join(", ") + "</p>" +
+        "<p><strong>Date of Birth:" + dob + "</p>";
+    }
+  </script>
+</body>
+</html>
