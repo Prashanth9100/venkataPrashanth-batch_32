@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+Array.prototype.small = function() {
+  if (this.length < 2) {
+    throw new Error("Array must have at least two elements.");
+  }
+
+  const arr = this.sort();
+  const secondSmallest = arr[1];
+
+  return secondSmallest;
+};
+
+// Example usage:
+const numbers = [5, 2, -8, 1, 9];
+console.log(numbers.small());  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<script>
+function small(array) {
+  if (array.length < 2) {
+    throw new Error("Array must have at least two elements.");
+  }
+
+
+  array.sort();
+
+  let element = array[1];
+
+  return element;
+}
+
+
+const numbers = [5, -8, 2, 1, 9];
+console.log(small(numbers)); 
+
+
+
+</script>
+<body>
+
+</body>
+</html>
